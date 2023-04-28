@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pickle
 from sklearn.model_selection import train_test_split
 from simple_rnn import SimpleRNNRegression
-
+from lstm import LSTMRegression
 from data_preprocessing import *
 from metrics import *
 
@@ -37,12 +37,16 @@ print("X_test shape=",X_test.shape)
 print("y_test shape=",y_test.shape)
 
 rnn = SimpleRNNRegression(units=100)
+lstm = LSTMRegression(units=100)
 
 rnn.fit(X_train=X_train, y_train=y_train)
-y_pred = rnn.predict(X_test=X_test)
+lstm.fit(X_train=X_train, y_train=y_train)
 
-print("y_pred shape = ", y_pred.shape)
+y_pred_rnn = rnn.predict(X_test=X_test)
+y_pred_lstm = lstm.predict(X_test=X_test)
 
-R2 = r2_score(y_true = y_test, y_pred = y_pred)
+R2_rnn = r2_score(y_true = y_test, y_pred = y_pred_rnn)
+R2_lstm = r2_score(y_true = y_test, y_pred = y_pred_lstm)
 
-print("R2 = ", R2)
+print("Simple RNN: R2 = ", R2_rnn)
+print("LSTM RNN: R2 = ", R2_lstm)

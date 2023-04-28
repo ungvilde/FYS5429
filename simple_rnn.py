@@ -1,11 +1,10 @@
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, SimpleRNN, Dropout
+from tensorflow.keras.layers import Dense, SimpleRNN
 
 class SimpleRNNRegression:
 
     def __init__(self, units=100, num_epochs=10, verbose=1, activation="relu", optimizer="adam"):
          self.units=units
-         self.dropout=dropout
          self.num_epochs=num_epochs
          self.verbose=verbose
          self.activation=activation
@@ -16,7 +15,6 @@ class SimpleRNNRegression:
         model=Sequential() 
         model.add(
             SimpleRNN(self.units, input_shape=(X_train.shape[1], X_train.shape[2]),
-            recurrent_dropout=self.dropout,
             activation=self.activation)
             ) 
             
