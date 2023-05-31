@@ -5,7 +5,7 @@
 Make sure you have tensorflow installed when running.
 
 ## Content
- - **cv_naive_bayes.py** and cv_rnn_lstm.py do 10-fold cross validation for each of the methods
+ - **cv_naive_bayes.py** and **cv_rnn_lstm.py** do 10-fold cross validation for each of the methods
  - **data_preprocessing.py** contain function for data preparation
  - **prepare_data.py** transforms data from raw continuous format to discrete matrix format
  - **lstm.py** has the LSTM decoder
