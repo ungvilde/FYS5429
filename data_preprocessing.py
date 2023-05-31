@@ -72,8 +72,6 @@ def bin_output(outputs,output_times,dt,wdw_start,wdw_end,downsample_factor=1):
 
     return outputs_binned
 
-
-###$$ GET_SPIKES_WITH_HISTORY #####
 def get_spikes_with_history(neural_data,bins_before,bins_after,bins_current=1):
     """
     Function that creates the covariate matrix of neural activity
